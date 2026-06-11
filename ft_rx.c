@@ -3,27 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rx.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: calberto <calberto@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:15:48 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/11 10:27:23 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/11 13:45:46 by calberto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_rx(int *stk, int tam)
-{
-	int	tmp;
-	int	i;
+#include "push_swap.h"
 
-	tmp = stk[0];
-	i = 0;
-	while (i < (tam - 1))
+void    ft_rx(t_stack **stk)
+{
+	t_stack *carruagem;
+	t_stack *maquinista;
+
+	if (*stk == NULL || (*stk)->next == NULL)
+		return ;
+
+	carruagem = *stk; // Guarda a carruagem da frente para a meter na cauda do comboio mais tarde
+	*stk = carruagem->next; // 2. O segundo nó passa a ser o NOVO topo da lista
+	carruagem->next = NULL; // 3. Como o antigo 'primeiro' vai para o fim, ele já não pode apontar para ninguém
+
+	maquinista = *stk; // 4. Criamos um boneco ('atual') para caminhar até ao fim da lista
+	while (maquinista->next != NULL)
 	{
-		stk[i] = stk[i + 1];
-		i++;
+		maquinista = maquinista->next; // O boneco salta para o nó seguinte
 	}
-	stk[i] = tmp;
+	maquinista->next = carruagem; // 5. O nó que era o último agora passa a apontar para o nosso ex-primeiro
 }
-//1234 stk
-//0123 pos
-//2341 output
