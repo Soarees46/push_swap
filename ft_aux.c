@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_aux.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/11 10:00:07 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/11 12:09:19 by vaugusto         ###   ########.fr       */
+/*   Created: 2026/06/11 12:08:05 by vaugusto          #+#    #+#             */
+/*   Updated: 2026/06/11 12:08:58 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdlib.h>
-# include <unistd.h> 	
-# include <stddef.h> 
-# include <stdint.h>
-
-typedef struct s_stack
+t_stack	*ft_lstlast(t_stack *lst)
 {
-	int				content;
-	struct s_stack	*next;
-}	t_stack;
-
-t_stack	*ft_lstlast(t_stack *lst);
-void	ft_rrx(t_stack *stk);
-
-#endif
+	if (lst == NULL)
+		return (lst);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
+}
