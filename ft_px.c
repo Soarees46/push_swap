@@ -3,24 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_px.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calberto <calberto@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 09:09:46 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/11 15:06:20 by calberto         ###   ########.fr       */
+/*   Updated: 2026/06/16 11:19:10 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ft_px(t_stack **stk_origem, t_stack **stk_destino)
+void	ft_px(int *stk_x, int *stk_y, int tam_y)
 {
-	t_stack *caixa_a_mover;
+	int	tmp;
+	int	i;
 
-	if (stk_origem == NULL || *stk_origem == NULL)
+	if (!stk_x)
 		return ;
-
-	caixa_a_mover = *stk_origem; // PASSO 1: Agarras na primeira caixa da lista de origem com a mão para não a perder
-	*stk_origem = caixa_a_mover->next; // PASSO 2: O segundo nó da origem passa a ser o NOVO topo da lista de origem
-	caixa_a_mover->next = *stk_destino; // PASSO 3: A caixa que tens na mão vai apontar para o atual topo da lista de destino
-	*stk_destino = caixa_a_mover; // PASSO 4: A lista de destino agora passa a começar oficialmente nesta caixa nova
+	i = 0;
+	while (0 < tam_y)
+	{
+		stk_y[tam_y] = stk_y[tam_y - 1];
+		tam_y--;
+	}
 }

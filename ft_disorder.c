@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_disorder.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/11 10:00:07 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/16 12:23:11 by vaugusto         ###   ########.fr       */
+/*   Created: 2026/06/16 10:14:23 by vaugusto          #+#    #+#             */
+/*   Updated: 2026/06/16 11:08:14 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdlib.h>
-# include <unistd.h> 	
-# include <stddef.h> 
-# include <stdint.h>
-
-typedef struct s_stack
+double	ft_disorder(t_stack *stk)
 {
-	struct s_stack	*prev;
-	int				content;
-	struct s_stack	*next;
-}	t_stack;
+	double		mistakes;
+	double		total_pairs;
+	t_stack		*i;
+	t_stack		*i2;
 
-void	ft_rrx(t_stack **stk);
-void	ft_px(int *stk_x, int *stk_y, int tam_y);
-t_stack	*ft_lstlast(t_stack *lst);
-double	ft_disorder(t_stack *stk);
-
-#endif
+	mistakes = 0;
+	total_pairs = 0;
+	i = stk;
+	while (i)
+	{
+		i2 = i->next;
+		while (i2)
+		{
+			total_pairs++;
+			if (i->content > i2->content)
+				mistakes++;
+			i2 = i2->next;
+		}
+		i = i->next;
+	}
+	if (total_pairs == 0)
+		return (0);
+	return (mistakes / total_pairs);
+}
