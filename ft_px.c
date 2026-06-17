@@ -6,9 +6,11 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 09:09:46 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/11 09:15:27 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/16 11:19:10 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 void	ft_px(int *stk_x, int *stk_y, int tam_y)
 {

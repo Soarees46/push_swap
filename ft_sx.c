@@ -3,18 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sx.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: calberto <calberto@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 09:04:38 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/11 09:19:15 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/11 12:25:26 by calberto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sx(int	*stk)
-{
-	int	tmp;
+#include "push_swap.h"
 
-	tmp = stk[0];
-	stk[0] = stk[1];
-	stk[1] = tmp;
+void    ft_sx(t_stack *stk)
+{
+	int tmp;
+
+	if (stk == NULL || stk->next == NULL)
+		return ;
+
+	tmp = stk->content;
+	stk->content = stk->next->content;
+	stk->next->content = tmp;
+	
 }
