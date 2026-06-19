@@ -5,22 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/06/19 11:05:52 by vaugusto          #+#    #+#              #
-#    Updated: 2026/06/19 22:13:33 by vaugusto         ###   ########.fr        #
+#    Created: 2026/04/28 14:35:54 by vaugusto          #+#    #+#              #
+#    Updated: 2026/06/01 16:21:01 by vaugusto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap.a
+NAME = libftprintf.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC =  ft_px.c ft_rrx.c ft_rx.c ft_sx.c \
-		ft_simple.c ft_utils.c ft_utils2.c \
-		ft_disorder.c main.c
+SRC =  ft_printf.c ft_print_c.c ft_print_s.c ft_print_i.c \
+		ft_print_ud.c ft_print_hex.c ft_print_p.c
 
 OBJ = $(SRC:.c=.o)
 
-all: printf $(NAME) 
+all: $(NAME) 
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
@@ -32,9 +31,6 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME) libftprintf.a
+	rm -f $(NAME)
 
 re: fclean all
-
-printf:
-	make -C ./ft_printf all

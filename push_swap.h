@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:00:07 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/19 11:55:47 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/19 22:08:45 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stddef.h> 
 # include <stdint.h>
 # include <stdio.h> //printf RETIRAR ou TROACAR POR ft_printf
-# include "./libft/libft.h"
+# include "./ft_printf/ft_printf.h"
 
 typedef struct s_stack
 {

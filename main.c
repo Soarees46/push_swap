@@ -6,11 +6,21 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:23:29 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/19 11:27:50 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/19 22:18:25 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	print_stack(t_stack *stk)
+{
+	while (stk)
+	{
+		ft_printf("%d -> ", stk->content);
+		stk = stk->next;
+	}
+	ft_printf("NULL\n");
+}
 
 void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b)
 {
@@ -18,23 +28,14 @@ void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b)
 
 	disorder = ft_disorder(stk_a);
 	if (disorder == 0)
-		printf("order");
+		ft_printf("order");
 	else if (disorder < 0.2)
-		printf("simple");
+		ft_printf("simple");
 	else if (disorder >= 0.2 && disorder < 0.5)
-		printf("medium");
+		ft_printf("medium");
 	else if (disorder >= 0.5)
-		printf("high");
-}
-
-void	print_stack(t_stack *stk)
-{
-	while (stk)
-	{
-		printf("%d -> ", stk->content);
-		stk = stk->next;
-	}
-	printf("NULL\n");
+		ft_printf("high");
+	print_stack(stk_b);
 }
 
 t_stack	*ft_stack_builder(int argc, char *argv[])
@@ -68,10 +69,10 @@ t_stack	*ft_stack_builder(int argc, char *argv[])
 int	main(int argc, char *argv[])
 {
 	t_stack	*stk_a;
-	// t_stack	*stk_b;
+	t_stack	*stk_b;
 
 	stk_a = ft_stack_builder(argc, argv);
-	// stk_b = ft_stack_builder(1, NULL);
+	stk_b = ft_stack_builder(1, NULL);
 
 	ft_algo_chooser(stk_a, stk_b);
 
