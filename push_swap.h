@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:00:07 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/17 11:33:34 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/19 10:26:46 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,12 @@ typedef struct s_stack
 }	t_stack;
 
 void	ft_rrx(t_stack **stk);
-void	ft_px(int *stk_x, int *stk_y, int tam_y);
-t_stack	*ft_lstlast(t_stack *lst);
+void	ft_px(t_stack **stk_y, t_stack **stk_x);
+void	ft_sx(t_stack *stk);
+void	ft_rx(t_stack **stk);
 double	ft_disorder(t_stack *stk);
+
+t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lstnew(int content, t_stack *prev);
 int		ft_atoi(char *nptr);
 int		is_number(char *str);

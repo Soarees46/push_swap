@@ -6,23 +6,32 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 09:09:46 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/16 11:19:10 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/19 10:21:34 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_px(int *stk_x, int *stk_y, int tam_y)
+void	ft_px(t_stack **stk_x, t_stack **stk_y)
 {
-	int	tmp;
-	int	i;
+	t_stack	*tmp;
 
-	if (!stk_x)
+	if (!stk_y || !*stk_y)
 		return ;
-	i = 0;
-	while (0 < tam_y)
-	{
-		stk_y[tam_y] = stk_y[tam_y - 1];
-		tam_y--;
-	}
+	tmp = *stk_y;
+	*stk_y = (*stk_y)->next;
+	if (*stk_y)
+		(*stk_y)->prev = NULL;
+	tmp->next = *stk_x;
+	if (*stk_x)
+		(*stk_x)->prev = tmp;
+	tmp->prev = NULL;
+	*stk_x = tmp;
 }
+
+// i = 0;
+// while (0 < tam_y)
+// {
+// 	stk_y[tam_y] = stk_y[tam_y - 1];
+// 	tam_y--;
+// }
