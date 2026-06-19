@@ -6,18 +6,20 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:23:29 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/19 10:52:00 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/19 11:27:50 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_algo_chooser(t_stack *stk)
+void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b)
 {
 	double	disorder;
 
-	disorder = ft_disorder(stk);
-	if (disorder < 0.2)
+	disorder = ft_disorder(stk_a);
+	if (disorder == 0)
+		printf("order");
+	else if (disorder < 0.2)
 		printf("simple");
 	else if (disorder >= 0.2 && disorder < 0.5)
 		printf("medium");
@@ -66,22 +68,12 @@ t_stack	*ft_stack_builder(int argc, char *argv[])
 int	main(int argc, char *argv[])
 {
 	t_stack	*stk_a;
-	t_stack	*stk_b;
+	// t_stack	*stk_b;
 
 	stk_a = ft_stack_builder(argc, argv);
-	stk_b = ft_stack_builder(1, NULL);
+	// stk_b = ft_stack_builder(1, NULL);
 
-	ft_algo_chooser(stk_a);
+	ft_algo_chooser(stk_a, stk_b);
 
 	return (0);
 }
-
-// printf("Antes:\n");
-// print_stack(stk_a);
-// printf("\n");
-// print_stack(stk_b);
-// ft_px(&stk_a, &stk_b);
-// printf("Depois:\n");
-// print_stack(stk_a);
-// printf("\n");
-// print_stack(stk_b);
