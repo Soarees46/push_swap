@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:23:29 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/19 22:18:25 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/22 11:20:44 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,6 @@ void	print_stack(t_stack *stk)
 		stk = stk->next;
 	}
 	ft_printf("NULL\n");
-}
-
-void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b)
-{
-	double	disorder;
-
-	disorder = ft_disorder(stk_a);
-	if (disorder == 0)
-		ft_printf("order");
-	else if (disorder < 0.2)
-		ft_printf("simple");
-	else if (disorder >= 0.2 && disorder < 0.5)
-		ft_printf("medium");
-	else if (disorder >= 0.5)
-		ft_printf("high");
-	print_stack(stk_b);
 }
 
 t_stack	*ft_stack_builder(int argc, char *argv[])
@@ -73,8 +57,6 @@ int	main(int argc, char *argv[])
 
 	stk_a = ft_stack_builder(argc, argv);
 	stk_b = ft_stack_builder(1, NULL);
-
-	ft_algo_chooser(stk_a, stk_b);
-
+	ft_algo_chooser(stk_a, stk_b, argc, argv);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:15:48 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/19 10:25:15 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/22 10:52:43 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@ void	ft_rx(t_stack **stk)
 
 	if (*stk == NULL || (*stk)->next == NULL)
 		return ;
-
 	carruagem = *stk;
 	*stk = carruagem->next;
 	carruagem->next = NULL;
-
 	maquinista = *stk;
 	while (maquinista->next != NULL)
 	{

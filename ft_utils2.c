@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 09:46:23 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/17 10:33:06 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/22 11:36:40 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,8 @@ int	is_number(char *str)
 	i = 0;
 	if (str[i] == '+' || str[i] == '-')
 		i++;
-
 	if (!str[i])
 		return (0);
-
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
@@ -52,4 +50,18 @@ int	is_number(char *str)
 		i++;
 	}
 	return (1);
+}
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	unsigned int	i;
+
+	i = 0;
+	if (n < 1)
+		return (0);
+	while ((i < n - 1) && s1[i] != '\0' && s2[i] != '\0' && s2[i] == s1[i])
+		i++;
+	if (s1[i] == s2[i])
+		return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

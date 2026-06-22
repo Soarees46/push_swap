@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:16:56 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/19 11:09:45 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/22 10:53:26 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_rrx(t_stack **stk)
 {
 	t_stack	*last;
 	t_stack	*s_to_last;
-
 
 	if (stk == NULL)
 		return ;
