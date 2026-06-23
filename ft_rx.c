@@ -6,13 +6,13 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:15:48 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/22 10:52:43 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/23 12:08:08 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rx(t_stack **stk)
+void	ft_rx(t_stack **stk, char x)
 {
 	t_stack	*carruagem;
 	t_stack	*maquinista;
@@ -28,4 +28,5 @@ void	ft_rx(t_stack **stk)
 		maquinista = maquinista->next;
 	}
 	maquinista->next = carruagem;
+	ft_printf("r%c\n", x);
 }

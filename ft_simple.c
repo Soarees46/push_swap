@@ -3,31 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_simple.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 12:36:42 by calberto          #+#    #+#             */
-/*   Updated: 2026/06/22 15:06:26 by calberto         ###   ########.fr       */
+/*   Updated: 2026/06/19 09:19:42 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	bring_min_to_top(t_stack **a, int min)
-{
-	while (*a && (*a)->content != min)
-		ft_rx(a);
-}
+// static void bring_min_to_top(t_stack **a, int min)
+// {
+//     while ((*a)->content != min) // Enquanto o valor do topo da stack não for o menor...
+//         ra(a);
+// }
 
-void	ft_simple(t_stack **a, t_stack **b)
-{
-	int	min;
+// void	ft_simple(t_stack **a, t_stack **b)
+// {
+// 	int	min;
 
-	while (stack_size(*a) > 0)
-	{
-		min = find_min(*a);
-		bring_min_to_top(a, min);
-		ft_px(a, b);
-	}
-	while (*b)
-		ft_px(b, a);
-}
+// 	while (*a) // enquanto A não estiver vazia
+// 	{
+// 		min = find_min(*a);          // 1) encontra o menor
+// 		bring_min_to_top(a, min);    // 2) roda até o menor estar no topo
+// 		pb(a, b);                    // 3) manda o menor para B
+// 	}
+// 	while (*b != NULL) // quando A estiver vazia, devolve tudo
+// 		pa(b, a);
+// }

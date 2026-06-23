@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:17:22 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/22 12:18:15 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/23 11:28:51 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b, int argc, char *argv[])
 	else if (disorder >= 0.2 && disorder < 0.5)
 		ft_printf("medium");
 	else if (disorder >= 0.5)
-		ft_printf("high");
+		ft_radix(&stk_a, &stk_b, argc);
 	ft_printf("\nSTAK B:\n");
 	print_stack(stk_b);
 }

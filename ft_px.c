@@ -6,13 +6,13 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 09:09:46 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/19 10:21:34 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/23 11:56:07 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_px(t_stack **stk_x, t_stack **stk_y)
+void	ft_px(t_stack **stk_x, t_stack **stk_y, char x)
 {
 	t_stack	*tmp;
 
@@ -27,6 +27,7 @@ void	ft_px(t_stack **stk_x, t_stack **stk_y)
 		(*stk_x)->prev = tmp;
 	tmp->prev = NULL;
 	*stk_x = tmp;
+	ft_printf("p%c\n", x);
 }
 
 // i = 0;
