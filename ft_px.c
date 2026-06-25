@@ -6,19 +6,21 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 09:09:46 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/23 11:56:07 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/25 09:48:36 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_px(t_stack **stk_x, t_stack **stk_y, char x)
+void	ft_px(t_stack **stk_y, t_stack **stk_x, char x)
 {
 	t_stack	*tmp;
 
 	if (!stk_y || !*stk_y)
 		return ;
 	tmp = *stk_y;
+	ft_printf("PUSH: movendo %d (%p)\n",
+		tmp->content, (void *)tmp);
 	*stk_y = (*stk_y)->next;
 	if (*stk_y)
 		(*stk_y)->prev = NULL;

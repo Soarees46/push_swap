@@ -6,13 +6,13 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 11:18:38 by calberto          #+#    #+#             */
-/*   Updated: 2026/06/17 10:19:53 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/25 10:07:49 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_size(t_stack *stack) //Conta quantos nós existem na tua linked list.
+int	stack_size(t_stack *stack)
 {
 	int	i;
 

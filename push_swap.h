@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:00:07 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/23 11:36:48 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/25 12:16:48 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ int		is_number(char *str);
 int		ft_printf(const char *format, ...);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	print_stack(t_stack *stk);
+void	ft_index_stack(t_stack *stk);
+void	ft_lstclear(t_stack **lst);
+t_stack	*ft_stack_copy(t_stack *stk);
 
 void	ft_radix(t_stack **a, t_stack **b, int size);
 
