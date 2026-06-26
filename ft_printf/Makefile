@@ -6,7 +6,7 @@
 #    By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/28 14:35:54 by vaugusto          #+#    #+#              #
-#    Updated: 2026/06/01 16:21:01 by vaugusto         ###   ########.fr        #
+#    Updated: 2026/06/26 09:19:48 by vaugusto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC =  ft_printf.c ft_print_c.c ft_print_s.c ft_print_i.c \
 
 OBJ = $(SRC:.c=.o)
 
-all: $(NAME) 
+all: $(PRINTF) $(NAME) 
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)

@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 11:24:47 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/25 12:11:16 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/26 10:09:08 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,7 @@ void	ft_radix(t_stack **a, t_stack **b, int size)
 
 	bits = ft_max_bits(*a);
 	ft_index_stack(*a);
-	ft_printf("indexes: ");
-	print_stack(*a);
+	print_stack(*a); //REMOVER 
 	i = 0;
 	while (i < bits)
 	{
@@ -82,5 +81,5 @@ void	ft_radix(t_stack **a, t_stack **b, int size)
 			ft_px(b, a, 'a');
 		i++;
 	}
-	print_stack(*a);
+	print_stack(*a); //REMOVER 
 }

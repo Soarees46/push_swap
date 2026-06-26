@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_px.c                                            :+:      :+:    :+:   */
+/*   ft_bench.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/11 09:09:46 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/26 10:09:55 by vaugusto         ###   ########.fr       */
+/*   Created: 2026/06/26 11:32:43 by vaugusto          #+#    #+#             */
+/*   Updated: 2026/06/26 11:33:16 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_px(t_stack **stk_y, t_stack **stk_x, char x)
+void	ft_bench()
 {
-	t_stack	*tmp;
-
-	if (!stk_y || !*stk_y)
-		return ;
-	tmp = *stk_y;
-	*stk_y = (*stk_y)->next;
-	if (*stk_y)
-		(*stk_y)->prev = NULL;
-	tmp->next = *stk_x;
-	if (*stk_x)
-		(*stk_x)->prev = tmp;
-	tmp->prev = NULL;
-	*stk_x = tmp;
-	ft_printf("p%c\n", x);
+	
 }
