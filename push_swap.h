@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:00:07 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/29 09:47:47 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/29 10:32:35 by calberto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,11 @@ void	print_stack(t_stack *stk);
 void	ft_index_stack(t_stack *stk);
 void	ft_lstclear(t_stack **lst);
 t_stack	*ft_stack_copy(t_stack *stk);
+int		get_position(t_stack *a, int value);
+int		stack_size(t_stack *a);
+int		find_min(t_stack *a);
 
+int		ft_simple(t_stack **a, t_stack **b);
 int		ft_radix(t_stack **a, t_stack **b, int size);
 
 #endif

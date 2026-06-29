@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algo_chooser.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:17:22 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/26 11:36:20 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/29 10:36:05 by calberto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b, int argc, char *argv[])
 	// 	disorder = ft_disorder(stk_a);
 	// }
 	if (disorder == 0)
-		return ;
+		return;
 	else if (disorder < 0.2)
-		ft_printf("simple");
+		ft_simple(&stk_a, &stk_b);
 	else if (disorder >= 0.2 && disorder < 0.5)
 		ft_printf("medium");
 	else if (disorder >= 0.5)

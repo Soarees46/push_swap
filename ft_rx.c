@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rx.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:15:48 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/29 09:47:19 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/29 10:08:05 by calberto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_rx(t_stack **stk, char x)
 	t_stack	*maquinista;
 
 	if (*stk == NULL || (*stk)->next == NULL)
-		return ;
+		return (0);
 	carruagem = *stk;
 	*stk = carruagem->next;
 	carruagem->next = NULL;

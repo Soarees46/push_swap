@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rrx.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:16:56 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/29 09:46:24 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/29 10:08:05 by calberto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_rrx(t_stack **stk, char x)
 	t_stack	*s_to_last;
 
 	if (stk == NULL)
-		return ;
+		return (0);
 	last = ft_lstlast(*stk);
 	s_to_last = last->prev;
 	last->next = *stk;
