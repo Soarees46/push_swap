@@ -1,33 +1,49 @@
 /* ************************************************************************** */
-/*                                                                            */
+/*	                                                                        */
 /*                                                        :::      ::::::::   */
 /*   ft_simple.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 12:36:42 by calberto          #+#    #+#             */
-/*   Updated: 2026/06/22 15:06:26 by calberto         ###   ########.fr       */
+/*   Updated: 2026/06/22 10:58:36 by calberto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	bring_min_to_top(t_stack **a, int min)
+static int bring_min_to_top(t_stack **a, int min)
 {
-	while (*a && (*a)->content != min)
-		ft_rx(a);
+	int pos = get_position(*a, min);
+	int size = stack_size(*a);
+	int total = 0;
+
+	if (pos <= size / 2)
+	{
+		while ((*a)->content != min)
+			total += rx(a, 'a');   // rotação normal
+	}
+	else
+	{
+		while ((*a)->content != min)
+			total += rrx(a, 'a');  // rotação inversa
+	}
+	return total;
 }
 
-void	ft_simple(t_stack **a, t_stack **b)
+int ft_simple(t_stack **a, t_stack **b)
 {
-	int	min;
+	int min;
+	int total = 0;
 
-	while (stack_size(*a) > 0)
+	while (*a)
 	{
 		min = find_min(*a);
-		bring_min_to_top(a, min);
-		ft_px(a, b);
+		total += bring_min_to_top(a, min); // mover min para o topo
+		total += px(a, b, 'b'); // push A -> B
 	}
 	while (*b)
-		ft_px(b, a);
+		total += px(b, a, 'a'); // push B -> A
+
+	return total;
 }

@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_px.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 09:09:46 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/19 10:21:34 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/29 10:02:41 by calberto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_px(t_stack **stk_x, t_stack **stk_y)
+int	ft_px(t_stack **stk_y, t_stack **stk_x, char x)
 {
 	t_stack	*tmp;
 
 	if (!stk_y || !*stk_y)
-		return ;
+		return (0);
 	tmp = *stk_y;
 	*stk_y = (*stk_y)->next;
 	if (*stk_y)
@@ -27,11 +27,6 @@ void	ft_px(t_stack **stk_x, t_stack **stk_y)
 		(*stk_x)->prev = tmp;
 	tmp->prev = NULL;
 	*stk_x = tmp;
+	ft_printf("p%c\n", x);
+	return (1);
 }
-
-// i = 0;
-// while (0 < tam_y)
-// {
-// 	stk_y[tam_y] = stk_y[tam_y - 1];
-// 	tam_y--;
-// }

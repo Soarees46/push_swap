@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:23:29 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/22 11:20:44 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/26 10:33:46 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int	main(int argc, char *argv[])
 	t_stack	*stk_a;
 	t_stack	*stk_b;
 
+	if (argc < 2 || (argc == 2 && !(is_number(argv[1]))))
+		return (0);
 	stk_a = ft_stack_builder(argc, argv);
 	stk_b = ft_stack_builder(1, NULL);
 	ft_algo_chooser(stk_a, stk_b, argc, argv);
