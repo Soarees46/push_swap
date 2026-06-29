@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_simple.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 12:36:42 by calberto          #+#    #+#             */
 /*   Updated: 2026/06/22 10:58:36 by calberto         ###   ########.fr       */
