@@ -6,7 +6,7 @@
 /*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:16:18 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/29 10:27:20 by calberto         ###   ########.fr       */
+/*   Updated: 2026/06/29 10:46:13 by calberto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,16 @@ t_stack	*ft_stack_copy(t_stack *stk)
 	return (new_head);
 }
 
-int get_position(t_stack *a, int value)
+int	get_position(t_stack *a, int value)
 {
-    int pos = 0;
+	int pos = 0;
 
-    while (a != NULL)
-    {
-        if (a->content == value)
-            return pos;
-        pos++;
-        a = a->next;
-    }
-    return -1; // se não encontrar (não deve acontecer)
+	while (a != NULL)
+	{
+		if (a->content == value)
+			return pos;
+		pos++;
+		a = a->next;
+	}
+	return -1; // se não encontrar (não deve acontecer)
 }
