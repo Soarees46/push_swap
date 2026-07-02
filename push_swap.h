@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:00:07 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/29 10:51:04 by calberto         ###   ########.fr       */
+/*   Updated: 2026/07/02 11:58:17 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <unistd.h> //write
 # include <stddef.h> 
 # include <stdint.h>
-# include <stdio.h> //printf RETIRAR ou TROACAR POR ft_printf
 # include "./ft_printf/ft_printf.h"
 
 typedef struct s_stack
@@ -26,6 +25,35 @@ typedef struct s_stack
 	int				content;
 	struct s_stack	*next;
 }	t_stack;
+
+typedef struct s_ops
+{
+	int	sa;
+	int	sb;
+	int	ss;
+	int	pa;
+	int	pb;
+	int	ra;
+	int	rb;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
+	int	total;
+}	t_ops;
+
+typedef struct s_flags
+{
+	double	disorder;
+	int		bench;
+}	t_flags;
+
+typedef struct s_args
+{
+	int		argc;
+	char	**argv;
+	int		allocated;
+}	t_args;
 
 int		ft_rrx(t_stack **stk, char x);
 int		ft_px(t_stack **stk_y, t_stack **stk_x, char x);
@@ -47,8 +75,9 @@ t_stack	*ft_stack_copy(t_stack *stk);
 int		get_position(t_stack *a, int value);
 int		stack_size(t_stack *a);
 int		find_min(t_stack *a);
+void	ft_bench(double disorder, t_ops ops);
 
 int		ft_simple(t_stack **a, t_stack **b);
-int		ft_radix(t_stack **a, t_stack **b, int size);
+t_ops	ft_radix(t_stack **a, t_stack **b, int size);
 
 #endif

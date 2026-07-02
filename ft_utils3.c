@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:16:18 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/29 10:50:45 by calberto         ###   ########.fr       */
+/*   Updated: 2026/07/02 11:40:53 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,20 @@ t_stack	*ft_stack_copy(t_stack *stk)
 
 int	get_position(t_stack *a, int value)
 {
-	int pos = 0;
+	int	pos;
 
+	pos = 0;
 	while (a != NULL)
 	{
 		if (a->content == value)
-			return pos;
+			return (pos);
 		pos++;
 		a = a->next;
 	}
-	return -1; // se não encontrar (não deve acontecer)
+	return (-1);
+}
+
+void	ft_error(void)
+{
+	ft_printf("%g", "Error");
 }

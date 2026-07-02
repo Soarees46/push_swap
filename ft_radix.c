@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_radix.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 11:24:47 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/29 12:11:50 by calberto         ###   ########.fr       */
+/*   Updated: 2026/07/01 11:29:02 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,31 +56,31 @@ void	ft_index_stack(t_stack *stk)
 	}
 }
 
-int	ft_radix(t_stack **a, t_stack **b, int size)
+t_ops	ft_radix(t_stack **a, t_stack **b, int size)
 {
-	int	bits;
-	int	i;
-	int	i2;
-	int	total;
+	int		bits;
+	int		i;
+	int		i2;
+	t_ops	ops;
 
 	bits = ft_max_bits(*a);
 	ft_index_stack(*a);
 	i = 0;
-	total = 0;
 	while (i < bits)
 	{
 		i2 = 0;
 		while (i2 < size && *a)
 		{
 			if (((*a)->content >> i) & 1)
-				total += ft_rx(a, 'a');
+				ops.ra += ft_rx(a, 'a');
 			else
-				total += ft_px(a, b, 'b');
+				ops.rb += ft_px(a, b, 'b');
 			i2++;
 		}
 		while (*b)
-			total += ft_px(b, a, 'a');
+			ops.pa += ft_px(b, a, 'a');
 		i++;
 	}
-	return (total);
+	ops.total = (ops.ra + ops.rb + ops.pa);
+	return (ops);
 }

@@ -9,22 +9,20 @@
 	No fim, deixar claro que toda análise é baseada nas operações da pilha, não em teoria de arrays.
 
 ## Algoritimos
-□ simple
-
+🗹 simple / Simple min/max extraction methods
 □ medium
-
-🗹 complex
-
+🗹 complex / Radix
 🗹 custom
 
 ## Requisitos gerais
 ### □ Tratar erros
-In case of error, it must display "Error" followed by a \n on the standard error.
-Errors include, for example: arguments that are not integers, integers outside the
-valid range, or duplicate values
-### □ Aplicar --bench
+### 🗹 Aplicar --bench
 ### □ Validar performance
 ### □ Criar Readme
 
 ## ANOTAÇOES
-	- adicionar retorno int para funcoes basicas (rx, px, rrx e sx) para contar o total de operacoes realizadas
+	Funcoes devem retornar t_ops para sabermos as operacoes e o total.
+	Qualquer coisa olhe o ft_radix e o ft_algo_choosers
+	
+	Como seria chamar a funcao ft_error() para esses casos: rguments that are not integers, integers outside the
+	valid range, or duplicate values.

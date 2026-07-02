@@ -6,13 +6,13 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/20 14:05:17 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/01 17:52:30 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/06/30 21:54:24 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_nbrlen(int n)
+int	ft_nbrlen(int n)
 {
 	int	len;
 

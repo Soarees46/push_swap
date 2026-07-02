@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:23:29 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/06/26 10:33:46 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/02 11:59:54 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,22 @@ int	main(int argc, char *argv[])
 {
 	t_stack	*stk_a;
 	t_stack	*stk_b;
+	// t_args	args;
 
 	if (argc < 2 || (argc == 2 && !(is_number(argv[1]))))
 		return (0);
+	// args = ft_stack_split(argc, argv);
 	stk_a = ft_stack_builder(argc, argv);
 	stk_b = ft_stack_builder(1, NULL);
 	ft_algo_chooser(stk_a, stk_b, argc, argv);
 	return (0);
 }
+
+// int i;
+// 	ft_printf("argc = %d\n", argc);
+// 	i = 0;
+// 	while (i < argc)
+// 	{
+// 		ft_printf("argv[%d] = '%s'\n", i, argv[i]);
+// 		i++;
+// 	}
