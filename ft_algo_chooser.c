@@ -6,11 +6,21 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:17:22 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/02 11:37:57 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/06 11:25:14 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// int	ft_strlen(const char *s)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (s[i] != '\0')
+// 		i++;
+// 	return (i);
+// }
 
 t_flags	ft_has_flag(char *argv[])
 {
@@ -34,15 +44,18 @@ t_flags	ft_has_flag(char *argv[])
 			flags.bench = 1;
 		i++;
 	}
+	flags.position = i;
 	return (flags);
 }
 
-void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b, int argc, char *argv[])
+void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b, int argc, t_flags flags)
 {
-	t_flags	flags;
+	// t_flags	flags; FAZER VIR DOS PARAMETROS
 	t_ops	ops;
+	// char	**stkss;
 
-	flags = ft_has_flag(argv);
+	// flags = ft_has_flag(argv);
+	// stkss = ft_args_sanitizer(argv, flags.position, argc);
 	ops = (t_ops){0};
 	if (flags.disorder == 0)
 		flags.disorder = ft_disorder(stk_a);

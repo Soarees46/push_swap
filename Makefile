@@ -6,7 +6,7 @@
 #    By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/19 11:05:52 by vaugusto          #+#    #+#              #
-#    Updated: 2026/06/29 10:08:45 by vaugusto         ###   ########.fr        #
+#    Updated: 2026/07/07 09:51:37 by vaugusto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CFLAGS = -Wall -Wextra -Werror
 SRC =  ft_px.c ft_rrx.c ft_rx.c ft_sx.c \
 		ft_simple.c ft_utils.c ft_utils2.c \
 		ft_disorder.c main.c ft_utils3.c \
-		ft_algo_chooser.c ft_radix.c ft_bench.c
+		ft_algo_chooser.c ft_radix.c ft_bench.c\
+		ft_split.c ft_args_sanitizer.c
 
 OBJ = $(SRC:.c=.o)
 

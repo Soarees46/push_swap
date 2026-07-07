@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:00:07 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/02 11:58:17 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/06 11:26:33 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_flags
 {
 	double	disorder;
 	int		bench;
+	int		position;
 }	t_flags;
 
 typedef struct s_args
@@ -60,7 +61,8 @@ int		ft_px(t_stack **stk_y, t_stack **stk_x, char x);
 int		ft_sx(t_stack *stk, char x);
 int		ft_rx(t_stack **stk, char x);
 double	ft_disorder(t_stack *stk);
-void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b, int argc, char *argv[]);
+void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b,
+			int argc, t_flags flags);
 
 t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lstnew(int content, t_stack *prev);
@@ -76,6 +78,12 @@ int		get_position(t_stack *a, int value);
 int		stack_size(t_stack *a);
 int		find_min(t_stack *a);
 void	ft_bench(double disorder, t_ops ops);
+char	*ft_strchr(const char *s, int c);
+char	**ft_split(char const *s, char c);
+size_t	ft_strlen(const char *s);
+char	*ft_strdup(const char *s);
+t_flags	ft_has_flag(char *argv[]);
+char	**ft_args_sanitizer(char *argv[], int argc);
 
 int		ft_simple(t_stack **a, t_stack **b);
 t_ops	ft_radix(t_stack **a, t_stack **b, int size);

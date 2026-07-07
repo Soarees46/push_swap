@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/25 12:16:18 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/02 11:40:53 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/04 15:43:42 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,27 @@ int	get_position(t_stack *a, int value)
 void	ft_error(void)
 {
 	ft_printf("%g", "Error");
+}
+
+char	*ft_strdup(const char *s)
+{
+	char	*str;
+	int		i;
+
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	str = malloc(i + 1 * sizeof(char));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

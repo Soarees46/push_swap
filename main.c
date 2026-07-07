@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:23:29 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/02 11:59:54 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/07 09:43:07 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,22 +54,18 @@ int	main(int argc, char *argv[])
 {
 	t_stack	*stk_a;
 	t_stack	*stk_b;
-	// t_args	args;
+	t_flags	flags;
+	char	**stack_n;
 
-	if (argc < 2 || (argc == 2 && !(is_number(argv[1]))))
-		return (0);
-	// args = ft_stack_split(argc, argv);
-	stk_a = ft_stack_builder(argc, argv);
+	flags = ft_has_flag(argv);
+	stack_n = ft_args_sanitizer(argv, argc);
+	ft_printf("STACK: %s", stack_n);
+	// stack = ft_stack_split(argc, argv);
+	// if (!stack)
+	// 	return (0);
+	stk_a = ft_stack_builder(argc, stack_n);
+	print_stack(stk_a);
 	stk_b = ft_stack_builder(1, NULL);
-	ft_algo_chooser(stk_a, stk_b, argc, argv);
+	ft_algo_chooser(stk_a, stk_b, argc, flags);
 	return (0);
 }
-
-// int i;
-// 	ft_printf("argc = %d\n", argc);
-// 	i = 0;
-// 	while (i < argc)
-// 	{
-// 		ft_printf("argv[%d] = '%s'\n", i, argv[i]);
-// 		i++;
-// 	}
