@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 09:46:23 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/04 15:42:55 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/09 10:25:04 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,11 @@ t_stack	*ft_lstlast(t_stack *lst) // Pega o ultimo elemento da stack
 int	is_number(char *str)
 {
 	int	i;
+	int	num;
 
+	num = 0;
+	if (!str)
+		return (0);
 	i = 0;
 	if (str[i] == '+' || str[i] == '-')
 		i++;
@@ -45,11 +49,11 @@ int	is_number(char *str)
 		return (0);
 	while (str[i])
 	{
-		if (str[i] < '0' || str[i] > '9')
-			return (0);
+		if (str[i] > '0' && str[i] < '9')
+			num = 1;
 		i++;
 	}
-	return (1);
+	return (num);
 }
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -66,7 +70,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-size_t	ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
 	int	i;
 

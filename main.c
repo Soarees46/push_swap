@@ -6,11 +6,33 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:23:29 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/07 09:43:07 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/09 10:28:14 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_strchr_parsing(char *s, t_stack **stk)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		while (s[i] == ' ')
+			i++;
+		if (is_number(&s[i]))
+		{
+			ft_lstadd_back(stk, ft_lstnew(ft_atoi(&s[i]), NULL));
+			if (s[i] == '+' || s[i] == '-')
+				i++;
+			while (s[i] >= '0' && s[i] <= '9')
+				i++;
+		}
+		else
+			i++;
+	}
+}
 
 void	print_stack(t_stack *stk)
 {
@@ -31,10 +53,12 @@ t_stack	*ft_stack_builder(int argc, char *argv[])
 
 	head = NULL;
 	prev = NULL;
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (++i < argc)
 	{
-		if (is_number(argv[i]))
+		if (ft_strchr(argv[i], ' '))
+			ft_strchr_parsing(argv[i], &head);
+		else if (is_number(argv[i]) && !ft_strchr(argv[i], ' '))
 		{
 			new = ft_lstnew(ft_atoi(argv[i]), prev);
 			if (!new)
@@ -45,7 +69,6 @@ t_stack	*ft_stack_builder(int argc, char *argv[])
 				prev->next = new;
 			prev = new;
 		}
-		i++;
 	}
 	return (head);
 }
@@ -55,16 +78,9 @@ int	main(int argc, char *argv[])
 	t_stack	*stk_a;
 	t_stack	*stk_b;
 	t_flags	flags;
-	char	**stack_n;
 
 	flags = ft_has_flag(argv);
-	stack_n = ft_args_sanitizer(argv, argc);
-	ft_printf("STACK: %s", stack_n);
-	// stack = ft_stack_split(argc, argv);
-	// if (!stack)
-	// 	return (0);
-	stk_a = ft_stack_builder(argc, stack_n);
-	print_stack(stk_a);
+	stk_a = ft_stack_builder(argc, argv);
 	stk_b = ft_stack_builder(1, NULL);
 	ft_algo_chooser(stk_a, stk_b, argc, flags);
 	return (0);

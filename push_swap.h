@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:00:07 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/06 11:26:33 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/09 10:26:18 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ typedef struct s_args
 {
 	int		argc;
 	char	**argv;
-	int		allocated;
 }	t_args;
 
 int		ft_rrx(t_stack **stk, char x);
@@ -79,11 +78,11 @@ int		stack_size(t_stack *a);
 int		find_min(t_stack *a);
 void	ft_bench(double disorder, t_ops ops);
 char	*ft_strchr(const char *s, int c);
-char	**ft_split(char const *s, char c);
-size_t	ft_strlen(const char *s);
+int		ft_strlen(const char *s);
 char	*ft_strdup(const char *s);
 t_flags	ft_has_flag(char *argv[]);
-char	**ft_args_sanitizer(char *argv[], int argc);
+t_stack	*ft_stack_builder(int argc, char *argv[]);
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
 
 int		ft_simple(t_stack **a, t_stack **b);
 t_ops	ft_radix(t_stack **a, t_stack **b, int size);

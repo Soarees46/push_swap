@@ -17,8 +17,11 @@
 ## Requisitos gerais
 ### □ Tratar erros
 ### 🗹 Aplicar --bench
+### □ Ajustar valores de operacoes em --bench
 ### □ Validar performance
 ### □ Criar Readme
+### 🗹 funcionar para 1 3 2 e para "1 3 2"
+### □ Usar os checkers
 
 ## ANOTAÇOES
 	Funcoes devem retornar t_ops para sabermos as operacoes e o total.

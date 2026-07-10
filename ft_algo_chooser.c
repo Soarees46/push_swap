@@ -6,21 +6,11 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:17:22 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/06 11:25:14 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/09 10:30:51 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// int	ft_strlen(const char *s)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (s[i] != '\0')
-// 		i++;
-// 	return (i);
-// }
 
 t_flags	ft_has_flag(char *argv[])
 {
@@ -30,7 +20,7 @@ t_flags	ft_has_flag(char *argv[])
 	flags.bench = 0;
 	flags.disorder = 0;
 	i = 1;
-	while (argv[i] && argv[i][0] == '-')
+	while (argv[i])
 	{
 		if ((ft_strncmp(argv[i], "--simple", 8)) == 0)
 			flags.disorder = 0.1;
@@ -47,15 +37,12 @@ t_flags	ft_has_flag(char *argv[])
 	flags.position = i;
 	return (flags);
 }
+// && argv[i][0] == '-'
 
 void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b, int argc, t_flags flags)
 {
-	// t_flags	flags; FAZER VIR DOS PARAMETROS
 	t_ops	ops;
-	// char	**stkss;
 
-	// flags = ft_has_flag(argv);
-	// stkss = ft_args_sanitizer(argv, flags.position, argc);
 	ops = (t_ops){0};
 	if (flags.disorder == 0)
 		flags.disorder = ft_disorder(stk_a);
