@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 10:17:21 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/09 10:28:30 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/11 16:24:18 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,3 @@ t_stack	*ft_stack_concat(t_stack *dest, t_stack *origin)
 	origin->prev = last_dest;
 	return (dest);
 }
-
