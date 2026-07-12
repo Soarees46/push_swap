@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: venom <venom@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:00:07 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/09 10:26:18 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/12 22:52:54 by venom            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ char	*ft_strdup(const char *s);
 t_flags	ft_has_flag(char *argv[]);
 t_stack	*ft_stack_builder(int argc, char *argv[]);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
+int		has_duplicates(t_stack *stk);
+int	ft_is_error(char *str);
 
 int		ft_simple(t_stack **a, t_stack **b);
 t_ops	ft_radix(t_stack **a, t_stack **b, int size);

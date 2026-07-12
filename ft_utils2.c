@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: venom <venom@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 09:46:23 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/09 10:25:04 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/12 22:50:57 by venom            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_stack	*ft_lstnew(int content, t_stack *prev)
 	return (node);
 }
 
-t_stack	*ft_lstlast(t_stack *lst) // Pega o ultimo elemento da stack 
+t_stack	*ft_lstlast(t_stack *lst)
 {
 	if (lst == NULL)
 		return (lst);
@@ -37,10 +37,8 @@ t_stack	*ft_lstlast(t_stack *lst) // Pega o ultimo elemento da stack
 int	is_number(char *str)
 {
 	int	i;
-	int	num;
 
-	num = 0;
-	if (!str)
+	if (!str || !str[0])
 		return (0);
 	i = 0;
 	if (str[i] == '+' || str[i] == '-')
@@ -49,11 +47,11 @@ int	is_number(char *str)
 		return (0);
 	while (str[i])
 	{
-		if (str[i] > '0' && str[i] < '9')
-			num = 1;
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
 		i++;
 	}
-	return (num);
+	return (1);
 }
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)

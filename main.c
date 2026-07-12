@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: venom <venom@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:23:29 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/10 12:12:06 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/12 22:50:25 by venom            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,30 +73,6 @@ t_stack	*ft_stack_builder(int argc, char *argv[])
 	return (head);
 }
 
-int	ft_is_error(char *str)
-{
-	int	i;
-
-	i = 1;
-	while (str[i])
-	{
-		if ((ft_strncmp(str, "--simple", 8)) == 0
-			|| (ft_strncmp(str, "--medium", 8)) == 0
-			|| (ft_strncmp(str, "--complex", 9)) == 0
-			|| (ft_strncmp(str, "--adaptive", 10)) == 0
-			|| (ft_strncmp(str, "--bench", 7)) == 0
-			|| is_number(str)
-			|| ft_strchr(str, ' '))
-			i++;
-		else
-		{
-			ft_print_2s("Error");
-			return (1);
-		}
-	}
-	return (0);
-}
-
 int	main(int argc, char *argv[])
 {
 	t_stack	*stk_a;
@@ -108,12 +84,16 @@ int	main(int argc, char *argv[])
 	while (++i < argc)
 	{
 		if (ft_is_error(argv[i]))
-			return (0);
-		i++;
+			return (1);
 	}
 	flags = ft_has_flag(argv);
 	stk_a = ft_stack_builder(argc, argv);
 	stk_b = ft_stack_builder(1, NULL);
+	if (has_duplicates(stk_a))
+	{
+		ft_printf("Error\n");
+		return (1);
+	}
 	ft_algo_chooser(stk_a, stk_b, argc, flags);
 	return (0);
 }
