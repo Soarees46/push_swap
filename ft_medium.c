@@ -3,100 +3,111 @@
 /*                                                        :::      ::::::::   */
 /*   ft_medium.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: carlossoares <carlossoares@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/29 11:45:21 by calberto          #+#    #+#             */
-/*   Updated: 2026/06/29 12:11:48 by calberto         ###   ########.fr       */
+/*   Created: 2026/07/05 15:42:48 by carlossoare       #+#    #+#             */
+/*   Updated: 2026/07/05 15:50:52 by carlossoare      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h" // feito com co-pilot para guardar a informacao
+#include "push_swap.h"
 
-int push_chunk_to_b(t_stack **a, t_stack **b, int start, int end)
+t_ops ft_medium(t_stack **a, t_stack **b, int size)
 {
-    int total = 0;
+	t_ops ops;
+	int chunk_size;
+	int limit;
+	int max_val;
+	int max_pos;
+	int pos;
+	t_stack *tmp;
+	int safety1 = 0;
+	int safety2 = 0;
+	int safety3 = 0;
 
-    while (1)
-    {
-        t_stack *tmp = *a;
-        int found = 0;
+	ops = (t_ops){0};
+	ft_index_stack(*a);
 
-        // procurar índice do chunk na stack A
-        while (tmp)
-        {
-            if (tmp->content >= start && tmp->content <= end)
-            {
-                found = 1;
-                break;
-            }
-            tmp = tmp->next;
-        }
+	if (size <= 20)
+		chunk_size = size / 2 + 1;
+	else if (size <= 100)
+		chunk_size = 20;
+	else
+		chunk_size = 40;
+	limit = chunk_size;
 
-        if (!found)
-            break; // chunk completo
+	// FASE 1: Enviar de A para B
+	while (*a)
+	{
+		if (safety1++ > 1000)
+		{
+			ft_printf("\n[ERRO] Loop Infinito na FASE 1 (A para B)!\n");
+			return (ops);
+		}
+		if ((*a)->content < limit)
+		{
+			ops.total += ft_px(b, a, 'b');
+			if (stack_size(*b) >= limit && limit < size)
+				limit += chunk_size;
+		}
+		else
+		{
+			ops.total += ft_rx(a, 'a');
+		}
+	}
 
-        // rodar até o índice do chunk aparecer no topo
-        while ((*a)->content < start || (*a)->content > end)
-            total += ft_rx(a, 'a'); // ra
+	// FASE 2: Enviar de B para A
+	while (*b)
+	{
+		if (safety2++ > 1000)
+		{
+			ft_printf("\n[ERRO] Loop Infinito na FASE 2 (B para A)!\n");
+			return (ops);
+		}
 
-        // push para B
-        total += ft_px(a, b, 'b'); // pb
-    }
+		tmp = *b;
+		max_val = tmp->content;
+		max_pos = 0;
+		pos = 0;
+		while (tmp)
+		{
+			if (tmp->content > max_val)
+			{
+				max_val = tmp->content;
+				max_pos = pos;
+			}
+			pos++;
+			tmp = tmp->next;
+		}
 
-    return total;
-}
-
-int push_back_to_a(t_stack **a, t_stack **b)
-{
-    int total = 0;
-
-    while (*b)
-    {
-        // encontrar o maior índice em B
-        int max = (*b)->content;
-        t_stack *tmp = *b;
-
-        while (tmp)
-        {
-            if (tmp->content > max)
-                max = tmp->content;
-            tmp = tmp->next;
-        }
-
-        // rodar até o maior estar no topo
-        while ((*b)->content != max)
-            total += ft_rrx(b, 'b'); // rrb
-
-        // push para A
-        total += ft_px(b, a, 'a'); // pa
-    }
-
-    return total;
-}
-
-int ft_medium(t_stack **a, t_stack **b)
-{
-    int size = stack_size(*a);
-    int chunk = (int)sqrt(size); // √n chunks
-    int total = 0;
-
-    ft_index_stack(*a); // transforma valores em índices
-
-    int start = 0;
-    int end = chunk;
-
-    while (start < size)
-    {
-        if (end >= size)
-            end = size - 1;
-
-        total += push_chunk_to_b(a, b, start, end);
-
-        start += chunk + 1;
-        end += chunk + 1;
-    }
-
-    total += push_back_to_a(a, b);
-
-    return total;
+		int b_size = stack_size(*b);
+		if (max_pos <= b_size / 2)
+		{
+			while (max_pos > 0)
+			{
+				if (safety3++ > 2000)
+				{
+					ft_printf("\n[ERRO] Loop Infinito nas ROTAÇÕES de B!\n");
+					return (ops);
+				}
+				ops.total += ft_rx(b, 'b');
+				max_pos--;
+			}
+		}
+		else
+		{
+			while (max_pos < b_size)
+			{
+				if (safety3++ > 2000)
+				{
+					ft_printf("\n[ERRO] Loop Infinito nas ROTAÇÕES REVERSAS de B!\n");
+					return (ops);
+				}
+				ops.total += ft_rrx(b, 'b');
+				max_pos++;
+			}
+		}
+		ops.total += ft_px(a, b, 'a');
+	}
+	return (ops);
 }
