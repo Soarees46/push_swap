@@ -15,9 +15,9 @@
 🗹 custom
 
 ## Requisitos gerais
-### □ Tratar erros
+### 🗹 Tratar erros
 ### 🗹 Aplicar --bench
-### □ Ajustar valores de operacoes em --bench
+### 🗹 Ajustar valores de operacoes em --bench
 ### □ Validar performance
 ### □ Criar Readme
 ### 🗹 funcionar para 1 3 2 e para "1 3 2"

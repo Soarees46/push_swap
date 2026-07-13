@@ -6,7 +6,7 @@
 /*   By: venom <venom@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 09:46:23 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/12 22:50:57 by venom            ###   ########.fr       */
+/*   Updated: 2026/07/13 11:21:52 by venom            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ int	is_number(char *str)
 		return (0);
 	while (str[i])
 	{
-		if (str[i] < '0' || str[i] > '9')
-			return (0);
+		if (str[i] >= '0' || str[i] <= '9')
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)

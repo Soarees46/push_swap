@@ -12,41 +12,40 @@
 
 #include "push_swap.h"
 
-static int	bring_min_to_top(t_stack **a, int min)
+static t_ops	bring_min_to_top(t_stack **a, int min, t_ops ops)
 {
-	int	pos;
-	int	size;
-	int	total;
+	int		pos;
+	int		size;
 
 	pos = get_position(*a, min);
 	size = stack_size(*a);
-	total = 0;
 	if (pos <= size / 2)
 	{
 		while ((*a)->content != min)
-			total += ft_rx(a, 'a');
+			ops.ra += ft_rx(a, 'a');
 	}
 	else
 	{
 		while ((*a)->content != min)
-			total += ft_rrx(a, 'a');
+			ops.rra += ft_rrx(a, 'a');
 	}
-	return (total);
+	return (ops);
 }
 
-int	ft_simple(t_stack **a, t_stack **b)
+t_ops	ft_simple(t_stack **a, t_stack **b)
 {
-	int	min;
-	int	total;
+	int		min;
+	t_ops	ops;
 
-	total = 0;
+	ops = (t_ops){0};
 	while (*a)
 	{
 		min = find_min(*a);
-		total += bring_min_to_top(a, min);
-		total += ft_px(a, b, 'b');
+		ops = bring_min_to_top(a, min, ops);
+		ops.pb += ft_px(a, b, 'b');
 	}
 	while (*b)
-		total += ft_px(b, a, 'a');
-	return (total);
+		ops.pa += ft_px(b, a, 'a');
+	ops.total = (ops.pa + ops.pb + ops.rra + ops.ra);
+	return (ops);
 }

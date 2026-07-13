@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_radix.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: venom <venom@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 11:24:47 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/01 11:29:02 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/13 12:39:31 by venom            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ t_ops	ft_radix(t_stack **a, t_stack **b, int size)
 
 	bits = ft_max_bits(*a);
 	ft_index_stack(*a);
+	ops = (t_ops){0};
 	i = 0;
 	while (i < bits)
 	{

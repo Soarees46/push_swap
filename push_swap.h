@@ -6,7 +6,7 @@
 /*   By: venom <venom@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:00:07 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/12 22:52:54 by venom            ###   ########.fr       */
+/*   Updated: 2026/07/13 12:42:35 by venom            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new);
 int		has_duplicates(t_stack *stk);
 int	ft_is_error(char *str);
 
-int		ft_simple(t_stack **a, t_stack **b);
+t_ops	ft_simple(t_stack **a, t_stack **b);
 t_ops	ft_radix(t_stack **a, t_stack **b, int size);
 
 #endif
