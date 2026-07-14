@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: venom <venom@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/12 22:47:55 by venom             #+#    #+#             */
-/*   Updated: 2026/07/12 22:49:42 by venom            ###   ########.fr       */
+/*   Created: 2026/07/12 22:47:55 by vaugusto          #+#    #+#             */
+/*   Updated: 2026/07/14 11:03:24 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	has_duplicates(t_stack *stk)
 	return (0);
 }
 
-static int	ft_is_flag(char *str)
+int	ft_is_flag(char *str)
 {
 	if (!ft_strncmp(str, "--simple", 8))
 		return (1);

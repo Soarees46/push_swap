@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: venom <venom@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:23:29 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/13 11:25:28 by venom            ###   ########.fr       */
+/*   Updated: 2026/07/14 11:10:28 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,14 @@ void	print_stack(t_stack *stk)
 	ft_printf("NULL\n");
 }
 
+int	ft_norminette(char *str)
+{
+	if (is_number(str) && !ft_strchr(str, ' ')
+		&& !ft_is_flag(str))
+		return (1);
+	return (0);
+}
+
 t_stack	*ft_stack_builder(int argc, char *argv[])
 {
 	int		i;
@@ -58,7 +66,7 @@ t_stack	*ft_stack_builder(int argc, char *argv[])
 	{
 		if (ft_strchr(argv[i], ' '))
 			ft_strchr_parsing(argv[i], &head);
-		else if (is_number(argv[i]) && !ft_strchr(argv[i], ' '))
+		else if (ft_norminette(argv[i]))
 		{
 			new = ft_lstnew(ft_atoi(argv[i]), prev);
 			if (!new)
@@ -83,7 +91,9 @@ int	main(int argc, char *argv[])
 	i = 0;
 	while (++i < argc)
 	{
-		if (ft_is_error(argv[i]))
+		if (argv[i][0] == '|')
+			break ;
+		else if (ft_is_error(argv[i]))
 			return (1);
 	}
 	flags = ft_has_flag(argv);
@@ -95,5 +105,7 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 	ft_algo_chooser(stk_a, stk_b, argc, flags);
+	ft_lstclear(stk_a);
+	ft_lstclear(stk_b);
 	return (0);
 }
