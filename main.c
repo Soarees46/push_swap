@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:23:29 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/14 11:10:28 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/15 10:00:10 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,8 @@ int	main(int argc, char *argv[])
 		ft_printf("Error\n");
 		return (1);
 	}
-	ft_algo_chooser(stk_a, stk_b, argc, flags);
-	ft_lstclear(stk_a);
-	ft_lstclear(stk_b);
+	ft_algo_chooser(stk_a, stk_b, flags);
+	ft_lstclear(&stk_a);
+	ft_lstclear(&stk_b);
 	return (0);
 }

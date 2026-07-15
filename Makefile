@@ -6,7 +6,7 @@
 #    By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/19 11:05:52 by vaugusto          #+#    #+#              #
-#    Updated: 2026/07/14 11:04:09 by vaugusto         ###   ########.fr        #
+#    Updated: 2026/07/15 11:04:38 by vaugusto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC =  ft_px.c ft_rrx.c ft_rx.c ft_sx.c \
 		ft_simple.c ft_utils.c ft_utils2.c \
 		ft_disorder.c main.c ft_utils3.c \
 		ft_algo_chooser.c ft_radix.c ft_bench.c\
-		ft_utils4.c ft_error.c
+		ft_utils4.c ft_error.c ft_chunck_based.c
 
 OBJ = $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:00:07 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/14 10:33:21 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/15 11:15:52 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,7 @@ int		ft_px(t_stack **stk_y, t_stack **stk_x, char x);
 int		ft_sx(t_stack *stk, char x);
 int		ft_rx(t_stack **stk, char x);
 double	ft_disorder(t_stack *stk);
-void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b,
-			int argc, t_flags flags);
+void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b, t_flags flags);
 
 t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lstnew(int content, t_stack *prev);
@@ -86,8 +85,11 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new);
 int		has_duplicates(t_stack *stk);
 int		ft_is_error(char *str);
 int		ft_is_flag(char *str);
+int		ft_lsttam(t_stack *lst);
+int		find_max(t_stack *stack);
 
 t_ops	ft_simple(t_stack **a, t_stack **b);
 t_ops	ft_radix(t_stack **a, t_stack **b, int size);
+t_ops	ft_chunck_based(t_stack **a, t_stack **b, int size);
 
 #endif

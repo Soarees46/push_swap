@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:17:22 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/14 11:04:17 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/15 11:16:01 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,13 @@ t_flags	ft_has_flag(char *argv[])
 }
 // && argv[i][0] == '-'
 
-void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b, int argc, t_flags flags)
+void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b, t_flags flags)
 {
 	t_ops	ops;
+	int		stk_size;
 
 	ops = (t_ops){0};
+	stk_size = ft_lsttam(stk_a);
 	if (flags.disorder == 0)
 		flags.disorder = ft_disorder(stk_a);
 	if (flags.disorder == 0)
@@ -51,9 +53,9 @@ void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b, int argc, t_flags flags)
 	else if (flags.disorder < 0.2)
 		ops = ft_simple(&stk_a, &stk_b);
 	else if (flags.disorder >= 0.2 && flags.disorder < 0.5)
-		ops.total = ft_printf("medium");
+		ops = ft_chunck_based(&stk_a, &stk_b, stk_size);
 	else if (flags.disorder >= 0.5)
-		ops = ft_radix(&stk_a, &stk_b, argc);
+		ops = ft_radix(&stk_a, &stk_b, stk_size);
 	if (flags.bench == 1)
 		ft_bench((flags.disorder * 100), ops);
 }

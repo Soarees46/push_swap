@@ -10,7 +10,7 @@
 
 ## Algoritimos
 🗹 simple / Simple min/max extraction methods
-□ medium
+🗹 medium / chunk based
 🗹 complex / Radix
 🗹 custom
 
@@ -18,7 +18,7 @@
 ### 🗹 Tratar erros
 ### 🗹 Aplicar --bench
 ### 🗹 Ajustar valores de operacoes em --bench
-### □ Validar performance
+### 🗹 Validar performance
 ### □ Criar Readme
 ### 🗹 funcionar para 1 3 2 e para "1 3 2"
 ### □ Usar os checkers

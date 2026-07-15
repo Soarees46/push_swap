@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 11:24:47 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/14 11:04:16 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/15 11:22:23 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ t_ops	ft_radix(t_stack **a, t_stack **b, int size)
 	bits = ft_max_bits(*a);
 	ft_index_stack(*a);
 	ops = (t_ops){0};
-	i = 0;
-	while (i < bits)
+	i = -1;
+	while (++i < bits)
 	{
 		i2 = 0;
 		while (i2 < size && *a)
@@ -75,12 +75,11 @@ t_ops	ft_radix(t_stack **a, t_stack **b, int size)
 			if (((*a)->content >> i) & 1)
 				ops.ra += ft_rx(a, 'a');
 			else
-				ops.rb += ft_px(a, b, 'b');
+				ops.pb += ft_px(a, b, 'b');
 			i2++;
 		}
 		while (*b)
 			ops.pa += ft_px(b, a, 'a');
-		i++;
 	}
 	ops.total = (ops.ra + ops.rb + ops.pa);
 	return (ops);

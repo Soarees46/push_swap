@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 10:17:21 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/10 10:05:28 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/15 10:02:54 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,19 @@ t_stack	*ft_stack_concat(t_stack *dest, t_stack *origin)
 	last_dest->next = origin;
 	origin->prev = last_dest;
 	return (dest);
+}
+
+int	ft_lsttam(t_stack *lst)
+{
+	int	tam;
+
+	tam = 0;
+	if (lst == NULL)
+		return (tam);
+	while (lst != NULL)
+	{
+		lst = lst->next;
+		tam++;
+	}
+	return (tam);
 }
