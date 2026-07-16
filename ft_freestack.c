@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rx.c                                            :+:      :+:    :+:   */
+/*   ft_freestack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 21:15:48 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/16 13:38:44 by calberto         ###   ########.fr       */
+/*   Created: 2026/07/16 09:48:35 by calberto          #+#    #+#             */
+/*   Updated: 2026/07/16 13:40:25 by calberto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_rx(t_stack **stk, char x)
+void	ft_free_stack(t_stack **stk)
 {
-	t_stack	*first;
-	t_stack	*last;
+	t_stack	*tmp;
 
-	if (!stk || !*stk || !(*stk)->next)
-		return (0);
-	first = *stk;
-	*stk = first->next;
-	(*stk)->prev = NULL;
-	last = *stk;
-	while (last->next)
-		last = last->next;
-	last->next = first;
-	first->prev = last;
-	first->next = NULL;
-	ft_printf("r%c\n", x);
-	return (1);
+	if (!stk || !*stk)
+		return ;
+	while (*stk)
+	{
+		tmp = (*stk)->next;
+		free(*stk);
+		*stk = tmp;
+	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:00:07 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/15 11:15:52 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/16 13:40:45 by calberto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	print_stack(t_stack *stk);
 void	ft_index_stack(t_stack *stk);
 void	ft_lstclear(t_stack **lst);
+void	ft_free_stack(t_stack **stk);
 t_stack	*ft_stack_copy(t_stack *stk);
 int		get_position(t_stack *a, int value);
 int		stack_size(t_stack *a);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 11:18:38 by calberto          #+#    #+#             */
-/*   Updated: 2026/06/25 10:07:49 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/16 13:34:47 by calberto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	find_min(t_stack *stack) //Encontra o menor número da stack.
 	return (min);
 }
 
-int	find_max(t_stack *stack) //Encontra o maior número da stack.
+int	find_max(t_stack *stack)
 {
 	int	max;
 

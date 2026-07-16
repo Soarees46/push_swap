@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:23:29 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/15 10:00:10 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/16 13:41:18 by calberto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	ft_strchr_parsing(char *s, t_stack **stk)
 	{
 		while (s[i] == ' ')
 			i++;
+		if (!s[i])
+			break ;
 		if (is_number(&s[i]))
 		{
 			ft_lstadd_back(stk, ft_lstnew(ft_atoi(&s[i]), NULL));
@@ -30,7 +32,10 @@ void	ft_strchr_parsing(char *s, t_stack **stk)
 				i++;
 		}
 		else
-			i++;
+		{
+			while (s[i] && s[i] != ' ')
+				i++;
+		}
 	}
 }
 
@@ -46,10 +51,22 @@ void	print_stack(t_stack *stk)
 
 int	ft_norminette(char *str)
 {
-	if (is_number(str) && !ft_strchr(str, ' ')
-		&& !ft_is_flag(str))
-		return (1);
-	return (0);
+	int	i;
+
+	if (!str || !str[0])
+		return (0);
+	i = 0;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	if (!str[i])
+		return (0);
+	while (str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 t_stack	*ft_stack_builder(int argc, char *argv[])
@@ -105,7 +122,7 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 	ft_algo_chooser(stk_a, stk_b, flags);
-	ft_lstclear(&stk_a);
-	ft_lstclear(&stk_b);
+	ft_free_stack(&stk_a);
+	ft_free_stack(&stk_b);
 	return (0);
 }

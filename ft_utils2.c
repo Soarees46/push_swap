@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 09:46:23 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/14 11:04:14 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/16 10:44:45 by calberto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ int	is_number(char *str)
 		return (0);
 	while (str[i])
 	{
-		if (str[i] >= '0' || str[i] <= '9')
-			return (1);
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)

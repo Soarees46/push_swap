@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_radix.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 11:24:47 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/15 11:22:23 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/16 13:40:50 by calberto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	ft_index_stack(t_stack *stk)
 		tmp->content = rank;
 		tmp = tmp->next;
 	}
+	ft_free_stack(&save);
 }
 
 t_ops	ft_radix(t_stack **a, t_stack **b, int size)
@@ -81,6 +82,6 @@ t_ops	ft_radix(t_stack **a, t_stack **b, int size)
 		while (*b)
 			ops.pa += ft_px(b, a, 'a');
 	}
-	ops.total = (ops.ra + ops.rb + ops.pa);
+	ops.total = (ops.ra + ops.pb + ops.pa);
 	return (ops);
 }

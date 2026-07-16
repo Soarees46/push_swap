@@ -14,19 +14,23 @@
 
 static t_ops	bring_min_to_top(t_stack **a, int min, t_ops ops)
 {
-	int		pos;
-	int		size;
+	int	pos;
+	int	size;
 
+	if (!*a)
+		return (ops);
 	pos = get_position(*a, min);
+	if (pos == -1)
+		return (ops);
 	size = stack_size(*a);
 	if (pos <= size / 2)
 	{
-		while ((*a)->content != min)
+		while (*a && (*a)->content != min)
 			ops.ra += ft_rx(a, 'a');
 	}
 	else
 	{
-		while ((*a)->content != min)
+		while (*a && (*a)->content != min)
 			ops.rra += ft_rrx(a, 'a');
 	}
 	return (ops);
