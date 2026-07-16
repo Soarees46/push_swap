@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_radix.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 11:24:47 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/16 13:40:50 by calberto         ###   ########.fr       */
+/*   Updated: 2026/07/16 13:52:55 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ t_ops	ft_radix(t_stack **a, t_stack **b, int size)
 		while (*b)
 			ops.pa += ft_px(b, a, 'a');
 	}
+	ops.total = (ops.ra + ops.pb + ops.pa);
 	ops.total = (ops.ra + ops.pb + ops.pa);
 	return (ops);
 }
