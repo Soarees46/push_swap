@@ -6,7 +6,7 @@
 /*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:23:29 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/16 13:56:37 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/17 11:13:52 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,9 +108,7 @@ int	main(int argc, char *argv[])
 	i = 0;
 	while (++i < argc)
 	{
-		if (argv[i][0] == '|')
-			break ;
-		else if (ft_is_error(argv[i]))
+		if (ft_is_error(argv[i]))
 			return (1);
 	}
 	flags = ft_has_flag(argv);
@@ -126,3 +124,6 @@ int	main(int argc, char *argv[])
 	ft_free_stack(&stk_b);
 	return (0);
 }
+
+// if (argv[i][0] == '|')
+// 	break ;

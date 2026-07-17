@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 09:46:23 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/16 10:44:45 by calberto         ###   ########.fr       */
+/*   Updated: 2026/07/17 10:57:08 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	is_number(char *str)
 		i++;
 	if (!str[i])
 		return (0);
-	while (str[i])
+	while (str[i] && str[i] != ' ')
 	{
 		if (str[i] < '0' || str[i] > '9')
 			return (0);
