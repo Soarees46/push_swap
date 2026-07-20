@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: venom <venom@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 13:41:35 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/01 11:43:53 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/20 11:44:30 by venom            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ char	*ft_itoa(int n);
 int		ft_print_2s(char *s);
 int		ft_print_2c(char c);
 int		ft_print_2i(int n);
+int	ft_printf_err(const char *format, ...);
 
 #endif

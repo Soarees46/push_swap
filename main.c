@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: venom <venom@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 21:23:29 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/17 11:13:52 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/20 11:47:50 by venom            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,14 +116,12 @@ int	main(int argc, char *argv[])
 	stk_b = ft_stack_builder(1, NULL);
 	if (has_duplicates(stk_a))
 	{
-		ft_printf("Error\n");
+		ft_printf_err("Error\n");
+		ft_free_stack(&stk_a);
 		return (1);
 	}
-	ft_algo_chooser(stk_a, stk_b, flags);
+	ft_algo_chooser(&stk_a, &stk_b, flags);
 	ft_free_stack(&stk_a);
 	ft_free_stack(&stk_b);
 	return (0);
 }
-
-// if (argv[i][0] == '|')
-// 	break ;

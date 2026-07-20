@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: calberto <calberto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: venom <venom@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 10:00:07 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/16 13:40:45 by calberto         ###   ########.fr       */
+/*   Updated: 2026/07/20 11:17:17 by venom            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int		ft_px(t_stack **stk_y, t_stack **stk_x, char x);
 int		ft_sx(t_stack *stk, char x);
 int		ft_rx(t_stack **stk, char x);
 double	ft_disorder(t_stack *stk);
-void	ft_algo_chooser(t_stack *stk_a, t_stack *stk_b, t_flags flags);
+void	ft_algo_chooser(t_stack **stk_a, t_stack **stk_b, t_flags flags);
 
 t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lstnew(int content, t_stack *prev);

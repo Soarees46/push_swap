@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: venom <venom@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/12 22:47:55 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/15 11:18:54 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/20 11:28:33 by venom            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,14 +96,14 @@ int	ft_is_error(char *str)
 	{
 		if (!ft_check_number_str(str))
 		{
-			ft_printf("Error\n");
+			ft_print_2s("Error\n");
 			return (1);
 		}
 		return (0);
 	}
 	if (!ft_is_valid_number(str))
 	{
-		ft_printf("Error\n");
+		ft_print_2s("Error\n");
 		return (1);
 	}
 	return (0);

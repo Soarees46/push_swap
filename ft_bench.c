@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bench.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: venom <venom@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 11:32:43 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/14 10:15:03 by vaugusto         ###   ########.fr       */
+/*   Updated: 2026/07/20 11:42:55 by venom            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ void	ft_bench(double disorder, t_ops ops)
 	else
 		strategy = "adaptive";
 	ft_print_2s("\n[bench] disorder: ");
-	ft_printf("%f%%", disorder);
+	ft_printf_err("%f%%", disorder);
 	ft_print_2s("\n[bench] strategy: ");
-	ft_printf("%g", strategy);
+	ft_printf_err("%g", strategy);
 	ft_print_2s("\n[bench] total_ops: ");
-	ft_printf("%a", ops.total);
+	ft_printf_err("%a", ops.total);
 	ft_print_2s("\n");
-	ft_printf("%g %a %g %a %g %a %g %a %g %a",
+	ft_printf_err("%g %a %g %a %g %a %g %a %g %a",
 		"[bench] sa: ", ops.sa, "sb: ", ops.sb,
 		"ss: ", ops.ss, "pa: ", ops.pa, "pb: ", ops.pb);
 	ft_print_2s("\n");
-	ft_printf("%g %a %g %a %g %a %g %a %g %a %g %a\n",
+	ft_printf_err("%g %a %g %a %g %a %g %a %g %a %g %a\n",
 		"[bench] ra: ", ops.ra, "rb: ", ops.rb,
 		"rr: ", ops.rr, "rra: ", ops.rra, "rrb: ", ops.rrb, "rrr:", ops.rrr);
 }
