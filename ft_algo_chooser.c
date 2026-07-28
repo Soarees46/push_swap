@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_algo_chooser.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: venom <venom@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vaugusto <vaugusto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/22 11:17:22 by vaugusto          #+#    #+#             */
-/*   Updated: 2026/07/20 11:21:11 by venom            ###   ########.fr       */
+/*   Updated: 2026/07/28 11:11:29 by vaugusto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ t_flags	ft_has_flag(char *argv[])
 	flags.position = i;
 	return (flags);
 }
-// && argv[i][0] == '-'
 
 void	ft_algo_chooser(t_stack **stk_a, t_stack **stk_b, t_flags flags)
 {
